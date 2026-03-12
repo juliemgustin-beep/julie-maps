@@ -20,9 +20,10 @@ const destinations = [
   {
     group: "Sports",
     places: [
-      { name: "Fremont Hills Club", address: "12889 Viscaino Pl, Los Altos Hills, CA 94022" },
+      { name: "Fremont Hills", address: "12889 Viscaino Pl, Los Altos Hills, CA 94022" },
       { name: "Grant Park", address: "1575 Holt Ave, Los Altos, CA 94024" },
       { name: "Fabian", address: "1575 Holt Ave, Los Altos, CA 94024" },
+      { name: "Chase Center", address: "1 Warriors Way, San Francisco, CA 94158" },
     ],
   },
   {
@@ -42,7 +43,7 @@ const destinations = [
       { name: "Smilecraft", address: "787 E El Camino Real, Sunnyvale, CA 94087" },
       { name: "Pediatrician", address: "842 Altos Oaks Dr, Los Altos, CA 94024" },
       { name: "Kids' Dentist", address: "1704 Miramonte Ave #9, Mountain View, CA 94040" },
-      { name: "Urgent Care Mountain View", address: "701 E El Camino Real 2nd floor, Mountain View, CA 94040" },
+      { name: "Urgent Care MTV", address: "701 E El Camino Real 2nd floor, Mountain View, CA 94040" },
     ],
   },
   {
@@ -50,6 +51,8 @@ const destinations = [
     places: [
       { name: "Emily", address: "288 Liebre Ct, Sunnyvale, CA 94086" },
       { name: "Roopa", address: "1586 Holt Ave, Los Altos, CA 94024" },
+      { name: "Sugandh", address: "435 Casita Way, Los Altos, CA 94022" },
+      { name: "Sandler", address: "412 Covington Rd, Los Altos, CA 94024" },
     ],
   },
 ];
