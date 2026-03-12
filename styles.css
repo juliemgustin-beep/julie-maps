@@ -1,7 +1,6 @@
 :root {
   color-scheme: dark;
   --bg: #050608;
-  --panel: rgba(20, 24, 31, 0.88);
   --panel-border: rgba(255, 255, 255, 0.08);
   --panel-highlight: rgba(255, 255, 255, 0.04);
   --text: #f5f7fb;
@@ -9,7 +8,7 @@
   --accent: #4da3ff;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   --radius-xl: 28px;
-  --radius-lg: 22px;
+  --radius-lg: 20px;
   --safe-top: max(1.5rem, env(safe-area-inset-top));
   --safe-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }
@@ -33,6 +32,17 @@ body {
   min-height: 100vh;
 }
 
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
 .app-shell {
   width: min(100%, 48rem);
   margin: 0 auto;
@@ -40,7 +50,7 @@ body {
 }
 
 .hero {
-  padding: 0.75rem 0.5rem 1.5rem;
+  padding: 0.75rem 0.5rem 1rem;
 }
 
 .eyebrow {
@@ -57,51 +67,106 @@ body {
   line-height: 1;
 }
 
-.subhead {
-  margin: 0.75rem 0 0;
-  max-width: 32rem;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.45;
-}
-
 .group-list {
   display: grid;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .group {
-  padding: 1rem;
   border: 1px solid var(--panel-border);
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, var(--panel-highlight), rgba(255, 255, 255, 0.01));
   backdrop-filter: blur(20px);
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.group-heading {
-  margin-bottom: 0.9rem;
-  padding: 0 0.2rem;
+.group-toggle {
+  width: 100%;
+  min-height: 3.75rem;
+  padding: 1rem 1rem 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.group-heading h2 {
-  margin: 0;
-  font-size: 1.05rem;
+.group-toggle-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.group-title {
+  font-size: 1.02rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
+}
+
+.group-icon,
+.destination-icon,
+.chevron svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-icon,
+.destination-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.group-icon svg,
+.destination-icon svg,
+.chevron svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chevron {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.chevron svg {
+  transition: transform 180ms ease;
+}
+
+.group-content {
+  padding: 0 1rem 1rem;
+}
+
+.group.is-collapsed .group-content {
+  display: none;
+}
+
+.group.is-collapsed .chevron svg {
+  transform: rotate(-90deg);
 }
 
 .button-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
 }
 
 .destination-button {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 5.5rem;
-  padding: 1rem 1.1rem;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 0.7rem 0.8rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
@@ -116,32 +181,38 @@ body {
 }
 
 .destination-button:focus-visible,
-.destination-button:hover {
-  border-color: rgba(77, 163, 255, 0.5);
-  background: linear-gradient(180deg, rgba(77, 163, 255, 0.18), rgba(255, 255, 255, 0.04));
+.destination-button:hover,
+.group-toggle:focus-visible,
+.group-toggle:hover {
   outline: none;
 }
 
-.destination-name {
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.2;
+.destination-button:focus-visible,
+.destination-button:hover {
+  border-color: rgba(77, 163, 255, 0.5);
+  background: linear-gradient(180deg, rgba(77, 163, 255, 0.18), rgba(255, 255, 255, 0.04));
 }
 
-.destination-address {
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.35;
+.group-toggle:focus-visible .group-title,
+.group-toggle:hover .group-title {
+  color: #ffffff;
+}
+
+.destination-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.destination-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 @media (min-width: 640px) {
   .app-shell {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .button-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

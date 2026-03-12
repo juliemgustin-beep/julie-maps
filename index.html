@@ -15,25 +15,36 @@
       <header class="hero">
         <p class="eyebrow">Navigation</p>
         <h1>Julie Maps</h1>
-        <p class="subhead">Tap a destination to open turn-by-turn directions in Apple Maps.</p>
       </header>
 
       <section id="groups" class="group-list" aria-label="Saved destinations"></section>
     </main>
 
     <template id="group-template">
-      <section class="group">
-        <div class="group-heading">
-          <h2></h2>
+      <section class="group is-open">
+        <button class="group-toggle" type="button" aria-expanded="true">
+          <span class="group-toggle-text">
+            <span class="group-icon" aria-hidden="true"></span>
+            <span class="group-title"></span>
+          </span>
+          <span class="chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M8 10l4 4 4-4" />
+            </svg>
+          </span>
+        </button>
+        <div class="group-content">
+          <div class="button-grid"></div>
         </div>
-        <div class="button-grid"></div>
       </section>
     </template>
 
     <template id="button-template">
       <a class="destination-button" rel="noopener noreferrer">
-        <span class="destination-name"></span>
-        <span class="destination-address"></span>
+        <span class="destination-content">
+          <span class="destination-icon" aria-hidden="true"></span>
+          <span class="destination-name"></span>
+        </span>
       </a>
     </template>
 
