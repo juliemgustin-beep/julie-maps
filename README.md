@@ -1,4 +1,4 @@
-# Julie Maps
+# Julie's Map
 
 Simple mobile-first web app for launching Apple Maps directions from large iPhone-friendly buttons.
 
