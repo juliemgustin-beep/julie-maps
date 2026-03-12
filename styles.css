@@ -1,12 +1,12 @@
 :root {
-  color-scheme: dark;
-  --bg: #050608;
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --panel-highlight: rgba(255, 255, 255, 0.04);
-  --text: #f5f7fb;
-  --muted: #99a3b3;
-  --accent: #4da3ff;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --panel-border: rgba(15, 23, 42, 0.12);
+  --panel-highlight: rgba(255, 255, 255, 0.94);
+  --text: #111827;
+  --muted: #475569;
+  --accent: #0f62fe;
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   --radius-xl: 28px;
   --radius-lg: 20px;
   --safe-top: max(1.5rem, env(safe-area-inset-top));
@@ -23,8 +23,8 @@ body {
   min-height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top, rgba(77, 163, 255, 0.18), transparent 34%),
-    linear-gradient(180deg, #0b0d12 0%, #050608 45%, #030405 100%);
+    radial-gradient(circle at top, rgba(15, 98, 254, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f7f9fc 48%, #eef3f8 100%);
   color: var(--text);
 }
 
@@ -55,7 +55,7 @@ button {
 
 .eyebrow {
   margin: 0 0 0.4rem;
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
@@ -63,7 +63,7 @@ button {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2rem, 7vw, 3rem);
+  font-size: clamp(2.2rem, 7.6vw, 3.2rem);
   line-height: 1;
 }
 
@@ -75,8 +75,7 @@ button {
 .group {
   border: 1px solid var(--panel-border);
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, var(--panel-highlight), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(20px);
+  background: linear-gradient(180deg, var(--panel-highlight), rgba(248, 250, 252, 0.98));
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -100,7 +99,7 @@ button {
 }
 
 .group-title {
-  font-size: 1.02rem;
+  font-size: 1.14rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
@@ -168,8 +167,8 @@ button {
   min-height: 3.5rem;
   padding: 0.7rem 0.8rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
   color: var(--text);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
@@ -189,13 +188,13 @@ button {
 
 .destination-button:focus-visible,
 .destination-button:hover {
-  border-color: rgba(77, 163, 255, 0.5);
-  background: linear-gradient(180deg, rgba(77, 163, 255, 0.18), rgba(255, 255, 255, 0.04));
+  border-color: rgba(15, 98, 254, 0.45);
+  background: linear-gradient(180deg, #eef5ff, #f8fbff);
 }
 
 .group-toggle:focus-visible .group-title,
 .group-toggle:hover .group-title {
-  color: #ffffff;
+  color: #0b1220;
 }
 
 .destination-content {
@@ -205,7 +204,7 @@ button {
 }
 
 .destination-name {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.2;
 }
