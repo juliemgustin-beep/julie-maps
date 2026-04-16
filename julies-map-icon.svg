@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Apple-style green → blue gradient -->
+    <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"></stop>
+      <stop offset="100%" stop-color="#3b82f6"></stop>
+    </linearGradient>
+
+    <!-- subtle icon shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity="0.18"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- iOS rounded-square background -->
+  <rect x="32" y="32" width="448" height="448" rx="110" fill="#f2f2f5"></rect>
+
+  <!-- minimal map pin -->
+  <path d="M256 120
+       C200 120 160 160 160 214
+       C160 290 256 388 256 388
+       C256 388 352 290 352 214
+       C352 160 312 120 256 120Z" fill="url(#pinGradient)" filter="url(#shadow)"></path>
+
+  <!-- pin center -->
+  <circle cx="256" cy="214" r="36" fill="white"></circle>
+
+</svg>
