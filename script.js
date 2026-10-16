@@ -17,15 +17,21 @@ const destinations = [
       { key: "middle", name: "Middle" },
       { key: "upper", name: "Upper" },
       { key: "school-fabian", name: "Fabian" },
+      { key: "gardner-bullis", name: "Gardner Bullis" },
+      { key: "aj-tutoring-los-altos", name: "AJ Tutoring Los Altos" },
+      { key: "aj-tutoring-palo-alto", name: "AJ Tutoring Palo Alto" },
+      { key: "green-ivy", name: "Green Ivy" },
     ],
   },
   {
-    group: "Sports",
+    group: "Sports & Activities",
     places: [
       { key: "fremont-hills", name: "Fremont Hills" },
       { key: "grant-park", name: "Grant Park" },
       { key: "sports-fabian", name: "Fabian" },
       { key: "chase-center", name: "Chase Center" },
+      { key: "institute-of-voice", name: "Institute of Voice" },
+      { key: "shoreline-athletic-field", name: "Shoreline Athletic Field" },
     ],
   },
   {
@@ -36,6 +42,7 @@ const destinations = [
       { key: "costco", name: "Costco" },
       { key: "stanford-mall", name: "Stanford Mall" },
       { key: "downtown-los-altos", name: "Downtown Los Altos" },
+      { key: "cal-color", name: "Cal Color" },
     ],
   },
   {
@@ -46,6 +53,7 @@ const destinations = [
       { key: "pediatrician", name: "Pediatrician" },
       { key: "kids-dentist", name: "Kids' Dentist" },
       { key: "urgent-care-mtv", name: "Urgent Care MTV" },
+      { key: "palo-alto-therapy", name: "Palo Alto Therapy" },
     ],
   },
   {
@@ -62,7 +70,7 @@ const destinations = [
 const categoryStyles = {
   Homes: { icon: "home", accent: "#2f73d9", soft: "#eaf2ff" },
   Schools: { icon: "school", accent: "#4d8b73", soft: "#edf6f1" },
-  Sports: { icon: "basketball", accent: "#e06d3c", soft: "#fff1eb" },
+  "Sports & Activities": { icon: "basketball", accent: "#e06d3c", soft: "#fff1eb" },
   Stores: { icon: "bag", accent: "#6760b6", soft: "#f0efff" },
   Doctors: { icon: "stethoscope", accent: "#d0526e", soft: "#fff0f4" },
   Friends: { icon: "person", accent: "#2785a7", soft: "#ebf7fb" },
