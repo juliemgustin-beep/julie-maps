@@ -68,19 +68,12 @@ const destinations = [
 ];
 
 const categoryStyles = {
-  Homes: { icon: "home", accent: "#2f73d9", soft: "#eaf2ff" },
-  Schools: { icon: "school", accent: "#4d8b73", soft: "#edf6f1" },
-  "Sports & Activities": { icon: "basketball", accent: "#e06d3c", soft: "#fff1eb" },
-  Stores: { icon: "bag", accent: "#6760b6", soft: "#f0efff" },
-  Doctors: { icon: "stethoscope", accent: "#d0526e", soft: "#fff0f4" },
-  Friends: { icon: "person", accent: "#2785a7", soft: "#ebf7fb" },
-};
-
-const destinationIconOverrides = {
-  "fremont-hills": "golf",
-  "grant-park": "soccer",
-  "sports-fabian": "field",
-  "chase-center": "basketball",
+  Homes: { icon: "home" },
+  Schools: { icon: "school" },
+  "Sports & Activities": { icon: "basketball" },
+  Stores: { icon: "bag" },
+  Doctors: { icon: "stethoscope" },
+  Friends: { icon: "person" },
 };
 
 const icons = {
@@ -128,33 +121,6 @@ const icons = {
       <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
     </svg>
   `,
-  golf: `
-    <svg viewBox="0 0 24 24" focusable="false">
-      <path d="M7 20h10" />
-      <path d="M12 20V4" />
-      <path d="M12 4h6l-1.6 2L18 8h-6" />
-      <path d="M8 17c1.1-.7 2.4-1 4-1s2.9.3 4 1" />
-    </svg>
-  `,
-  soccer: `
-    <svg viewBox="0 0 24 24" focusable="false">
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="m12 7 4 3-1.5 4.6h-5L8 10z" />
-      <path d="m8 10-3 .8" />
-      <path d="m16 10 3 .8" />
-      <path d="m9.5 14.6-1.8 2.7" />
-      <path d="m14.5 14.6 1.8 2.7" />
-    </svg>
-  `,
-  field: `
-    <svg viewBox="0 0 24 24" focusable="false">
-      <path d="M4.5 6.5h15v11h-15z" />
-      <path d="M12 6.5v11" />
-      <path d="M4.5 12h4" />
-      <path d="M15.5 12h4" />
-      <circle cx="12" cy="12" r="2" />
-    </svg>
-  `,
 };
 
 const groupsContainer = document.querySelector("#groups");
@@ -181,8 +147,6 @@ destinations.forEach(({ group, places }) => {
   const grid = groupFragment.querySelector(".button-grid");
   const category = categoryStyles[group] || categoryStyles.Homes;
 
-  section.style.setProperty("--category-accent", category.accent);
-  section.style.setProperty("--category-soft", category.soft);
   title.textContent = group;
   groupIcon.innerHTML = icons[category.icon] || "";
   toggle.setAttribute("aria-label", `Toggle ${group} destinations`);
@@ -192,12 +156,9 @@ destinations.forEach(({ group, places }) => {
   places.forEach(({ key, name }) => {
     const buttonFragment = buttonTemplate.content.cloneNode(true);
     const link = buttonFragment.querySelector(".destination-button");
-    const icon = buttonFragment.querySelector(".destination-icon");
     const nameText = buttonFragment.querySelector(".destination-name");
-    const iconName = destinationIconOverrides[key] || category.icon;
 
     nameText.textContent = name;
-    icon.innerHTML = icons[iconName] || icons[category.icon] || "";
     link.href = buildWorkerUrl(key);
     link.setAttribute("aria-label", `Open Apple Maps directions to ${name}`);
     link.classList.add("destination-button--single-line");
