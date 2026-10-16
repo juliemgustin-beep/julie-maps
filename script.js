@@ -17,7 +17,6 @@ const destinations = [
       { key: "middle", name: "Middle" },
       { key: "upper", name: "Upper" },
       { key: "school-fabian", name: "Fabian" },
-      { key: "gardner-bullis", name: "Gardner Bullis" },
       { key: "aj-tutoring-los-altos", name: "AJ Tutoring Los Altos" },
       { key: "aj-tutoring-palo-alto", name: "AJ Tutoring Palo Alto" },
       { key: "green-ivy", name: "Green Ivy" },
@@ -32,6 +31,8 @@ const destinations = [
       { key: "chase-center", name: "Chase Center" },
       { key: "institute-of-voice", name: "Institute of Voice" },
       { key: "shoreline-athletic-field", name: "Shoreline Athletic Field" },
+      { key: "gardner-bullis", name: "Gardner Bullis" },
+      { key: "cal-color", name: "Cal Color" },
     ],
   },
   {
@@ -42,7 +43,6 @@ const destinations = [
       { key: "costco", name: "Costco" },
       { key: "stanford-mall", name: "Stanford Mall" },
       { key: "downtown-los-altos", name: "Downtown Los Altos" },
-      { key: "cal-color", name: "Cal Color" },
     ],
   },
   {
